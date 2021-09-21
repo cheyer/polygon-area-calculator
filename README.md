@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Simple application to calculate and display area of geometric data. Try to upload the file `example.json` from the root directory and try it out.
 
-## Getting Started
+## Local Setup
 
-First, run the development server:
+First, change the endpoint to point to localhost in the file `utils/constants.ts`:
+
+```typescript
+export const SERVICE_ENDPOINT = "http://localhost:3000";
+```
+Then install the dependencies and run the server
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ npm i
+$ npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Frontend
+The frontend application is build using Next.js with React and Typescript. The main entry of the application is `pages/index.tsx` which is using various components from the `components/` directory. For a simpler prototyping of styles TailwindCSS was used.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## API
+The API layer makes use of serverless functions. `next-connect` is being used to configure the API route with middleware, just as one would do with an ExpressJS server. Vercel finds files in the `pages/api` and deploys these API routes mapping them to `host/api/*`.
+In this case the API endpoint is `https://polygon-area-calculator.vercel.app/api/upload`
+You can try calling this enpoint, e.g.
+```
+curl --location --request POST 'https://polygon-area-calculator.vercel.app/api/upload' \
+--form 'polygon=@"/path-to-data/example.json"'
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Tests
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This project uses Jest and React Testing Library. A test example for an utility and a React component can be found in the folde `__tests__`. As a next step integration tests (e.g. using Cypress) could be introduced.
+To run the tests simply call `npm run test`.
 
-## Learn More
+## Deployment on Vercel
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This app was deployed on the[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
