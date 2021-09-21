@@ -6,7 +6,7 @@ import Container from "../components/Container";
 import FileInput from "../components/FileInput";
 import NavBar from "../components/NavBar";
 import PolygonList from "../components/PolygonList";
-import { FORM_FIELD_FILE_NAME } from "../utils/constants";
+import { FORM_FIELD_FILE_NAME, SERVICE_ENDPOINT } from "../utils/constants";
 import { IPolygonWithArea } from "../utils/transformPolygonData";
 
 const Index = () => {
@@ -39,7 +39,7 @@ const Index = () => {
     const formData = new FormData();
     formData.append(FORM_FIELD_FILE_NAME, selectedFile);
 
-    fetch("http://localhost:3000/api/upload", {
+    fetch(SERVICE_ENDPOINT, {
       method: "POST",
       body: formData,
     })
