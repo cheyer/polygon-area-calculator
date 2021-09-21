@@ -39,7 +39,7 @@ const Index = () => {
     const formData = new FormData();
     formData.append(FORM_FIELD_FILE_NAME, selectedFile);
 
-    fetch(SERVICE_ENDPOINT, {
+    fetch(`${SERVICE_ENDPOINT}/api/upload`, {
       method: "POST",
       body: formData,
     })

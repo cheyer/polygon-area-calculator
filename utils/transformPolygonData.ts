@@ -17,6 +17,7 @@ interface IPolygonData {
 
 export interface IPolygonWithArea {
   area: number;
+  category: string;
   points: IPolygon[];
 }
 
@@ -24,6 +25,7 @@ const transformPolygonData = (data: IFile): IPolygonWithArea[] => {
   try {
     return data.payload.polygons.map((item) => ({
       area: calculateArea(item.polygon.points),
+      category: item.category,
       points: item.polygon.points,
     }));
   } catch (error: any) {
