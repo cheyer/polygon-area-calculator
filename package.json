@@ -5,15 +5,33 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "lint": "next lint",
+    "start": "next start",
+    "test": "jest --watch"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "area-polygon": "^1.0.1",
+    "express-fileupload": "^1.2.1",
     "next": "11.1.2",
+    "next-connect": "^0.10.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
+    "@types/express-fileupload": "^1.1.7",
     "@types/react": "17.0.21",
+    "autoprefixer": "^10.3.4",
+    "babel-jest": "^27.2.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.0",
+    "postcss": "^8.3.6",
+    "react-test-renderer": "^17.0.2",
+    "tailwindcss": "^2.2.15",
     "typescript": "4.4.3"
   }
 }
