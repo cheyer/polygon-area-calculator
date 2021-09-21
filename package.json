@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "area-polygon": "^1.0.1",
+    "cors": "^2.8.5",
     "express-fileupload": "^1.2.1",
     "next": "11.1.2",
     "next-connect": "^0.10.2",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
+    "@types/cors": "^2.8.12",
     "@types/express-fileupload": "^1.1.7",
     "@types/react": "17.0.21",
     "autoprefixer": "^10.3.4",

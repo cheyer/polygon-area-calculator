@@ -1,3 +1,4 @@
+import cors from "cors";
 import fileUpload from "express-fileupload";
 import type { NextApiRequest, NextApiResponse } from "next";
 import nextConnect from "next-connect";
@@ -33,6 +34,8 @@ const router = nextConnect({
     return res.status(405).json({ error });
   },
 });
+
+router.use(cors());
 
 router.use(
   fileUpload({
