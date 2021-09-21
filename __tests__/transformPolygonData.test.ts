@@ -1,6 +1,4 @@
-import transformPolygonData, {
-  IFile,
-} from "../pages/utils/transformPolygonData";
+import transformPolygonData, { IFile } from "../utils/transformPolygonData";
 
 describe("transformPolygonData", () => {
   it("should throw error if file format is not correct", () => {

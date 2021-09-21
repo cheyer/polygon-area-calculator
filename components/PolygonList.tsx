@@ -1,5 +1,5 @@
-import compareNumbers from "../pages/utils/compareNumbers";
-import { IPolygonWithArea } from "../pages/utils/transformPolygonData";
+import compareNumbers from "../utils/compareNumbers";
+import { IPolygonWithArea } from "../utils/transformPolygonData";
 
 interface IListeItemProps {
   area: number;

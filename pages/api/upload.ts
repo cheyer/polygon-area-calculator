@@ -1,10 +1,10 @@
 import fileUpload from "express-fileupload";
 import type { NextApiRequest, NextApiResponse } from "next";
 import nextConnect from "next-connect";
-import { FORM_FIELD_FILE_NAME } from "../utils/constants";
+import { FORM_FIELD_FILE_NAME } from "../../utils/constants";
 import transformPolygonData, {
   IPolygonWithArea,
-} from "../utils/transformPolygonData";
+} from "../../utils/transformPolygonData";
 
 declare module "next" {
   interface NextApiRequest {
